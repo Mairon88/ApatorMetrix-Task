@@ -66,7 +66,7 @@ class IPv4Lib(CLibLoader):
             base_ip = IpToInt.convert_ip_to_int(splitted_prefix[0])
             mask = bytes([int(splitted_prefix[1])])
             result_add = self.lib.add(base_ip, mask)
-            print(f"Result of add: {result_add}")
+            # print(f"Result of add: {result_add}")
             return result_add
         except Exception as e:
             print("Nie udało się dodać prefixu", e)
@@ -78,7 +78,7 @@ class IPv4Lib(CLibLoader):
             base_ip = IpToInt.convert_ip_to_int(splitted_prefix[0])
             mask = bytes([int(splitted_prefix[1])])
             result_delete = self.lib.delete(base_ip, mask)
-            print(f"Result of delete: {result_delete}")
+            # print(f"Result of delete: {result_delete}")
             return result_delete
         except Exception as e:
             print("Nie udało się usunąć prefixu", e)
@@ -88,7 +88,7 @@ class IPv4Lib(CLibLoader):
             converted_ip = IpToInt.convert_ip_to_int(ip_addr)
             result_check = self.lib.check(converted_ip)
 
-            print(f"Result of check: {int.from_bytes(result_check, byteorder='big')}")
+            # print(f"Result of check: {int.from_bytes(result_check, byteorder='big')}")
             return int.from_bytes(result_check, byteorder='big')
         except Exception as e:
             print("Nie można było sprawdzić czy adres ip znajduję się w zbiorze", e)
@@ -103,3 +103,5 @@ class IpToInt:
             return ip_int
         except Exception as e:
             print("Nie udało się przekonwertować adresu ip na liczbę int ", e)
+
+
