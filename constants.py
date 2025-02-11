@@ -1,0 +1,6 @@
+TWO_ARGUMENTS_0_GIVEN = "this function takes at least 2 arguments (0 given)"
+TWO_ARGUMENTS_1_GIVEN = "this function takes at least 2 arguments (1 given)"
+ARGUMENT_1_WRONG_TYPE = "argument 1: TypeError: wrong type"
+ARGUMENT_2_WRONG_TYPE = "argument 2: TypeError: wrong type"
+SUCCESS_CODE = "0"
+FAILURE_CODE = "-1"

@@ -1,9 +1,9 @@
-from services import IPv4Lib
+from services import IPv4Tester
 import sys
 
 
 def run_subprocess_delete(prefix):
-    ipv4 = IPv4Lib(path="c_files/IPv4.so")
+    ipv4 = IPv4Tester(path="c_files/IPv4.so")
     ipv4.lib_init()
     return ipv4.delete(prefix)
 
