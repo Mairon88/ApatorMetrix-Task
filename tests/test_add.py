@@ -72,7 +72,8 @@ def test_add_with_incorrect_value_mask(base_ip, mask):
     assert result.stdout.rstrip("\n") == FAILURE_CODE
 
 
-@pytest.mark.parametrize("base_ip, mask", (("10.20.0.0", 16), ("10.20.0.0", 24), ("10.20.0.0", 8), ("10.20.0.0", 12), ("10.20.0.0", 5)))
+@pytest.mark.parametrize("base_ip, mask",
+                         (("10.20.0.0", 16), ("10.20.0.0", 24), ("10.20.0.0", 8), ("10.20.0.0", 12), ("10.20.0.0", 5)))
 def test_add_with_correct_prefix(base_ip, mask):
     base_ip = ParamConverter.convert_ip_to_int(base_ip)
     params = {"base_ip": base_ip, "mask": mask}
@@ -81,7 +82,8 @@ def test_add_with_correct_prefix(base_ip, mask):
 
 
 def test_add_more_than_64_prefix():
-    multi_prefix = [(ParamConverter.convert_ip_to_int(f"10.20.0.{fourth_octet}"), mask) for fourth_octet in range(5) for mask in range(1, 24)]
+    multi_prefix = [(ParamConverter.convert_ip_to_int(f"10.20.0.{fourth_octet}"), mask) for fourth_octet in range(5) for
+                    mask in range(1, 24)]
     params = {"multi_prefix": multi_prefix}
     result = run_subprocess_add(params)
     assert result.stdout.rstrip("\n") == FAILURE_CODE

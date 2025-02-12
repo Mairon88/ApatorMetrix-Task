@@ -90,14 +90,13 @@ class IPv4Tester(CLibLoader):
         except Exception as e:
             print("Nie udało się usunąć prefixu", e)
 
-    def check(self, ip_addr: str, is_ip_addr_int: bool = True) -> Union[int, None]:
+    def check(self, params: str) -> Union[int, None]:
+        params = json.loads(params)
         try:
-            converted_ip = ParamConverter.convert_ip_to_int(ip_addr) if is_ip_addr_int else ip_addr
-            result_check = self.lib.check(converted_ip)
-            # print(f"Result of check: {int.from_bytes(result_check, byteorder='big')}")
+            result_check = self.lib.check(params.get("ip_addr_to_check"))
             return int.from_bytes(result_check, byteorder='big')
         except Exception as e:
-            print("Nie można było sprawdzić czy adres ip znajduję się w zbiorze", e)
+            return e
 
 
 class ParamConverter:

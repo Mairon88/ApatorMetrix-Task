@@ -2,12 +2,12 @@ from services import IPv4Tester
 import sys
 
 
-def run_subprocess_check(ip_addr):
+def run_subprocess_check(params):
     ipv4 = IPv4Tester(path="c_files/IPv4.so")
     ipv4.lib_init()
-    return ipv4.check(ip_addr)
+    ipv4.add(params)
+    return ipv4.check(params)
 
 if __name__ == "__main__":
-    prefix = sys.argv[1]
-    result = run_subprocess_check(prefix)
+    result = run_subprocess_check(sys.argv[1])
     print(result)
