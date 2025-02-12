@@ -1,9 +1,16 @@
+from typing import Union
+
+from constants import PATH_TO_SO_FILE
 from services import IPv4Tester
 import sys
 
+"""
+Plik do uruchamiania metody delete jako subprocess
+"""
 
-def run_subprocess_delete(params):
-    ipv4 = IPv4Tester(path="c_files/IPv4.so")
+
+def run_subprocess_delete(params: str) -> Union[str, None]:
+    ipv4 = IPv4Tester(path=PATH_TO_SO_FILE)
     ipv4.lib_init()
     if "base_ip" in params:
         ipv4.add(params)
@@ -12,7 +19,7 @@ def run_subprocess_delete(params):
         return ipv4.check(params)
     return del_result
 
+
 if __name__ == "__main__":
-    params = sys.argv[1]
-    result = run_subprocess_delete(params)
+    result = run_subprocess_delete(sys.argv[1])
     print(result)
