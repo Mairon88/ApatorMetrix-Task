@@ -1,7 +1,5 @@
 # ApatorMetrix-Task 
 
-## (link do wygenerowanego raportu z przeprowadzonych testów: https://mairon88.github.io/ApatorMetrix-Task/raport.html?sort=result)
-
 ### Treść Zadania 
 Zaimplementowano bibliotekę dynamiczną (https://github.com/apator-metrix/InterviewKit), która zarządza zbiorem maksymalnie 64 prefiksów IPv4.
 
@@ -57,7 +55,7 @@ W związku z tym przygotowano pomocnicze pliki subprocess_add.py, subprocess_che
 
 W plikach: test_add.py, test_check.py oraz test_delete.py znajdują się właściwe testy napisane z użyciem biblioteki <b>pytest</b>.
 
-Przykładowy raport wygenerowany przez pytest-html znajduje się tutaj: [Link do raportu](https://mairon88.github.io/ApatorMetrix-Task/raport.html?sort=result)
+#### Przykładowy raport wygenerowany przez pytest-html znajduje się tutaj: [Link do raportu](https://mairon88.github.io/ApatorMetrix-Task/raport.html?sort=result)
 
 ### Wyniki przeprowadzonych testów
 
