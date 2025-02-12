@@ -41,6 +41,10 @@ Windows
 
         pip install -r requirements.txt
 
+#### Uruchamianie wszystkich testów (flaga --html=raport.html generuje raport)
+
+        pytest --html=raport.html
+
 
 ### Opis przygotowanego projektu do testowania biblioteki dynamicznej
 
