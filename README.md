@@ -1,4 +1,4 @@
-# ApatorMetrix-Task
+# ApatorMetrix-Task (link do opisu projektu, z którego można przejśc do raportu w postaci html -> https://mairon88.github.io/ApatorMetrix-Task/)
 
 ### Treść Zadania 
 Zaimplementowano bibliotekę dynamiczną (https://github.com/apator-metrix/InterviewKit), która zarządza zbiorem maksymalnie 64 prefiksów IPv4.
