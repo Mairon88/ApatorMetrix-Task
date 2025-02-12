@@ -79,16 +79,18 @@ class IPv4Tester(CLibLoader):
         except Exception as e:
             return e
 
-    def delete(self, prefix: str, is_base_ip_int, is_mask_ip_int) -> Union[str, None]:
+    def delete(self, params) -> Union[str, None]:
+        params = json.loads(params)
+        prefix_part = []
         try:
-            splitted_prefix = prefix.split("/")
-            base_ip = ParamConverter.convert_ip_to_int(splitted_prefix[0]) if is_base_ip_int else splitted_prefix[0]
-            mask = int(splitted_prefix[1]) if is_mask_ip_int else splitted_prefix[1]
-            result_delete = self.lib.delete(base_ip, mask)
-            # print(f"Result of delete: {result_delete}")
-            return result_delete
+            if base_ip := params.get("base_ip_to_del"):
+                prefix_part.append(base_ip)
+            if mask := params.get("mask_to_del"):
+                prefix_part.append(mask)
+            result_del = self.lib.delete(*prefix_part)
+            return result_del
         except Exception as e:
-            print("Nie udało się usunąć prefixu", e)
+            return e
 
     def check(self, params: str) -> Union[int, None]:
         params = json.loads(params)
